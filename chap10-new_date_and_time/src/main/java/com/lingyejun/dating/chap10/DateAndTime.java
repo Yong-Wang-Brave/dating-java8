@@ -36,6 +36,14 @@ public class DateAndTime {
     }
 
     public static void main(String[] args) {
+        //获取年月日时分秒1
+        LocalDateTime localDateTime = LocalDateTime.now();
+        String format = localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        System.out.println(format);
+
+
+
+
         // testSync();
 
         // LocalDate
@@ -144,8 +152,8 @@ public class DateAndTime {
         ZoneId nowZoneId = ZoneId.systemDefault();
         ZoneId japanZoneId = ZoneId.of("Asia/Tokyo");
         System.out.println(nowZoneId + " " + japanZoneId);
-        LocalDateTime localDateTime = LocalDateTime.now();
-        System.out.println(localDateTime);
+/*        LocalDateTime localDateTime1 = LocalDateTime.now();
+        System.out.println(localDateTime);*/
 
         // 标明这个时间是哪个时区下的
         System.out.println(localDateTime.atZone(japanZoneId));
